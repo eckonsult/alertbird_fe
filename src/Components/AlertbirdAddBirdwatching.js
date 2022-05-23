@@ -17,8 +17,7 @@ export class AlertAddBirdwatching extends Component{
 
 return(
     
-      <div class="container">
-          {'hejsan'}
+      <div class="container">         
         <div class="row">
           <div class="col-s">            
           </div>

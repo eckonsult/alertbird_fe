@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from "react-dom/client";
 import {BrowserRouter, Route, Routes, NavLink, Redirect, useHistory} from 'react-router-dom' // instead of "Switch"
 import { Switch } from 'react-router-dom' 
 import './App.css';
@@ -33,16 +34,14 @@ function App(){
               </li>      
           </ul>
         </nav>
-        <Switch> 
-            <Route exact path="/" component={AlertBirdHome}/>      
-            <Route exact path='/AlertbirdHome' component={AlertBirdHome}/> 
-            <Route exact path='/AddBirdwatching' component={AlertAddBirdwatching}/>
-            <Route exact path='/AlertBirdMembersPage' component={AlertBirdMembersPage}/>                         
-        </Switch>
+        <Routes> 
+            <Route  path="/" element={AlertBirdHome}/>      
+            <Route  path='/AlertbirdHome' element={<AlertBirdHome/>}/> 
+            <Route  path='/AddBirdwatching' element={<AlertAddBirdwatching/>}/>
+            <Route  path='/AlertBirdMembersPage' element={<AlertBirdMembersPage/>}/>                         
+        </Routes>
         </div>
-      </div>
-      <div className="d-flex flex-row">     
-      </div>
+      </div>      
     </BrowserRouter>
   );
 }
