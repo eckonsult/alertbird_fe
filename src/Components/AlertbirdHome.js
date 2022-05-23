@@ -26,7 +26,7 @@ return(
               <br/>   
               <br/> 
               <br/>      
-              <h1>Välkommen till Hemsidan </h1>  
+              <h1>Välkommen till Hemsidan2 </h1>  
               <br/> 
               <br/> 
               <br/> 
