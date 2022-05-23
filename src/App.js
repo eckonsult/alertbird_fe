@@ -35,7 +35,7 @@ function App(){
           </ul>
         </nav>
         <Routes> 
-            <Route  path="/" element={AlertBirdHome}/>      
+            <Route  path="/" element={<AlertBirdHome/>}/>      
             <Route  path='/AlertbirdHome' element={<AlertBirdHome/>}/> 
             <Route  path='/AddBirdwatching' element={<AlertAddBirdwatching/>}/>
             <Route  path='/AlertBirdMembersPage' element={<AlertBirdMembersPage/>}/>                         
