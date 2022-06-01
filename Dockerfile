@@ -1,6 +1,7 @@
-FROM node:18-alpine3.14
+FROM winamd64/hello-world
 WORKDIR /alertbird_fe
-ENV PATH="./node_modules/.bin:$PATH"
+COPY package*.json ./
+RUN npm install
 COPY . .
-RUN npm run build
-CMD ["npm ","start"];
+EXPOSE 3000
+CMD ["npm ","start"]
