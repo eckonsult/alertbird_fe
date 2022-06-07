@@ -1,7 +1,9 @@
-FROM winamd64/hello-world
-WORKDIR /alertbird_fe
-COPY package*.json ./
-RUN npm install
+FROM winamd64/hello-world As Production
+ENV NODE_ENV = production 
+WORKDIR /usr/src/api
+COPY package.json .
+COPY package-lock.json .
+RUN npm ci
 COPY . .
-EXPOSE 3000
-CMD ["npm ","start"]
+RUN npm run build
+CMD ["sh", "-c", "npm run start:production"]
