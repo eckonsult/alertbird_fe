@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag alertbird_fe:$(date +%s)
+      run: docker build alertbird_fe  --tag alertbird_fe7
