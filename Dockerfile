@@ -1,10 +1,7 @@
-FROM node:14 As Production
-ENV NODE_ENV = production 
+FROM node:15.3-alpine
 WORKDIR /alertbird_fe
-COPY package.json .
-COPY package-lock.json .
-RUN npm install
+ENV PATH="./node_modules/.bin:$PATH"
 COPY . .
-EXPOSE 3000
 RUN npm run build
-CMD ["sh", "-c", "npm run start:production"]
+CMD ["npm", "start"]
+
