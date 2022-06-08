@@ -1,6 +1,6 @@
 FROM node:14 As Production
 ENV NODE_ENV = production 
-WORKDIR /usr/src/api
+WORKDIR /alertbird_fe
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
