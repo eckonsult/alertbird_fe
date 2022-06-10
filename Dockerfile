@@ -1,4 +1,4 @@
-FROM node:15.3-alpine
+FROM docker:22.06.0-beta.0-alpine3.16
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
 COPY package.json .

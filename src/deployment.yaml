@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: alertbirdfe #name of the microservice
+spec:
+  selector:
+    matchLabels:
+      app: xx
+    replicas: 2 #how many pods you want to create 
+    template: 
+      metadata: 
+        labels: xx
+      spec:
+        containers:
+          name:
+          image: xx
+          ports: 
+            containerPort: 80 
