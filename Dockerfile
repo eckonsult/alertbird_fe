@@ -1,4 +1,4 @@
-FROM node:12.18.1
+FROM hello-seattle
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
 COPY package.json .
