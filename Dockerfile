@@ -1,18 +1,10 @@
-FROM nginx
-# Override the base log level (info).
-ENV NPM_CONFIG_LOGLEVEL warn
-# Expose port for service
-EXPOSE 80
-# Install and configure `serve`.
-#RUN npm install -g serve
-
-# Copy source code to image
-#COPY . .
-
-# Install dependencies
-#RUN npm install
-
-# Build app and start server from script
-#CMD [ "npm", "start" ]
-COPY container /
-COPY build /usr/share/nginx/html
+FROM node:14 As Production
+ENV NODE_ENV = production 
+WORKDIR /alertbird_fe
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+RUN npm run build
+CMD ["sh", "-c", "npm run start:production"]
