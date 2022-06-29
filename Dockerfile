@@ -15,7 +15,7 @@ WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
 COPY package.json .
 COPY package-lock.json .
-RUN npm install
+RUN npm install -g npm@8.13.1
 COPY . .
 EXPOSE 443
 RUN npm run build
