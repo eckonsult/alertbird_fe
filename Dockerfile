@@ -11,7 +11,7 @@
 #CMD ["sh", "-c", "npm run start:production"]
 
 #FROM node:15.3-alpine
-FROM ubuntu:20.04
+FROM alpine:latest
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
 COPY package.json .
