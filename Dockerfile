@@ -10,7 +10,8 @@
 #RUN npm run build
 #CMD ["sh", "-c", "npm run start:production"]
 
-FROM node:15.3-alpine
+#FROM node:15.3-alpine
+FROM ubuntu:latest
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
 COPY package.json .
