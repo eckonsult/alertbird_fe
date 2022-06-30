@@ -11,10 +11,9 @@
 #CMD ["sh", "-c", "npm run start:production"]
 
 #FROM node:15.3-alpine
-FROM hello-world:latest
+FROM nginx:latest
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
-echo PATH
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
