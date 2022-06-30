@@ -11,13 +11,14 @@
 #CMD ["sh", "-c", "npm run start:production"]
 
 #FROM node:15.3-alpine
-FROM alpine:latest
+FROM hello-world:latest
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
+echo PATH
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
 COPY . .
 EXPOSE 443
 RUN npm run build
-CMD ["npm ","start"]; 
+CMD ["npm","start"]; 
