@@ -14,9 +14,7 @@
 FROM nginx:latest
 WORKDIR /alertbird_fe
 ENV PATH="./node_modules/.bin:$PATH"
-COPY package.json .
-COPY package-lock.json .
-COPY node_modules/ ./
+COPY . .
 RUN npm install
 COPY . .
 EXPOSE 443
