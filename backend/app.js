@@ -15,9 +15,14 @@ app.get('/api/', (req, res) => {
 });
 
 app.get('/api/posts', (req, res) => {
-  fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((json) => res.json(json));
+    try {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((response) => response.json())
+        .then((json) => res.json(json));
+    }
+    catch(error){
+        console.log(error);
+    }  
 });
 
 // app.get('/*', (req, res) => {
