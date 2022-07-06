@@ -1,17 +1,23 @@
-version: "3.8"
+version: '3.8'
 services:
-api:
-build: ./api
-container_name: api_c
-ports:
-- '3000:4000'
-volumes:
-- ./api:/app
-- ./app/node_modules
-frontend:
-build: ./frontend
-container_name: frontend_c
-ports:
-- '3000:3000'
-stdin_open: true
-tty: true
+  server:
+    image: node:12-alpine
+    ports:
+      - '8080:80'
+    volumes:
+      - ./server:/root/server
+    env_file:
+      - ./deploy/server.env
+    entrypoint: sh /root/server/start_server.sh
+  frontend:
+    build:
+      context: ./deploy
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./frontend/build:/var/www/html
+      - ./deploy/default.conf:/etc/nginx/sites-available/default
+    depends_on:
+      - server

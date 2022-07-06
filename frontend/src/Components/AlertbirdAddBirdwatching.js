@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
 //import {Variables} from './Components/Variables.js';
 
-export class AlertBirdHome extends Component{
-
+export class AlertAddBirdwatching extends Component{
     constructor(props){
         super(props);
 
@@ -12,9 +11,13 @@ export class AlertBirdHome extends Component{
     }
 
     render(){
-       
+        const {          
+            
+        }=this.state;
+
 return(
-      <div class="container">
+    
+      <div class="container">         
         <div class="row">
           <div class="col-s">            
           </div>
@@ -26,10 +29,10 @@ return(
               <br/>   
               <br/> 
               <br/>      
-              <h1>Välkommen till Hemsidan2 </h1>  
+              <h1>Välkommen till "Lägg till ny fågelskådning"-sidan </h1>  
               <br/> 
               <br/> 
-              <br/> 
+              <br/>               
               <br/> 
               <br/>       
               <br/> 
@@ -49,4 +52,4 @@ return(
         )
     }
 }
-export default AlertBirdHome;
+export default AlertAddBirdwatching;

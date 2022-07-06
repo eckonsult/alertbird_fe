@@ -29,8 +29,7 @@ return(
               <br/>   
               <br/> 
               <br/>      
-              <h1>Välkommen till Medlemssidan </h1> 
-              <h2>20220608 hejsan hejsan </h2>  
+              <h1>Välkommen till Medlemssidan </h1>              
               <br/> 
               <br/> 
               <br/> 
